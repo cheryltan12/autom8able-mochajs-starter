@@ -21,4 +21,6 @@ pipeline {
         }
 
     }
+    
+    publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'mochawesomearchive', reportFiles: 'mochawesome.html', reportName: 'HTML Report', reportTitles: 'testresults'])
 }    
