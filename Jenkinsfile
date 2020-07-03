@@ -5,7 +5,6 @@ pipeline {
         stage('start') {
             steps{
                 echo 'Starting..'
-                notifyStarted()
             }
         }
         stage('Build') {
