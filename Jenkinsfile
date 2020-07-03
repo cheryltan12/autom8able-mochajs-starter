@@ -19,10 +19,10 @@ pipeline {
                 sh 'npm run test:awesome'
                 publishHTML([allowMissing: false, 
                              alwaysLinkToLastBuild: false, 
-                             keepAll: false, 
+                             keepAll: true, 
                              reportDir: 'mochawesome-report', 
                              reportFiles: 'mochawesome.html', 
-                             reportName: 'HTML Report', 
+                             reportName: 'Test Execution Status (Last Run)', 
                              reportTitles: 'testresults'])    
             }
         }
