@@ -17,10 +17,16 @@ pipeline {
             steps {
                 echo 'Testing..'
                 sh 'npm run test:awesome'
+                publishHTML([allowMissing: false, 
+                             alwaysLinkToLastBuild: false, 
+                             keepAll: true, 
+                             reportDir: 'mochawesome-report', 
+                             reportFiles: 'mochawesome.html', 
+                             reportName: 'HTML Report', 
+                             reportTitles: 'testresults'])    
             }
         }
 
     }
-    
-    publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'mochawesomearchive', reportFiles: 'mochawesome.html', reportName: 'HTML Report', reportTitles: 'testresults'])
 }    
+    
